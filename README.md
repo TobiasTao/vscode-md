@@ -1,65 +1,45 @@
-# vscode-md README
+## 💡 Introduction
 
-This is the README for your extension "vscode-md". After writing up a brief description, we recommend including the following sections.
+**Meet all needs when writing markdown**
 
-## Features
+## ✨ Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- Support three editing modes: WYSIWYG, Instant Rendering and Split View
+- Support outline, mathematical formulas, mind maps, charts, flowcharts, Gantt charts, timing charts, staffs, multimedia, voice reading, heading anchors, code highlighting and copying, graphviz rendering
+- Multi-language support, built-in Chinese, English, Korean text localization
+- Built-in security filtering, export, image lazy loading, task list, at, multi-platform preview, multi-theme switching, copy to WeChat function
+- The toolbar contains 30+ items of operations. In addition to support for expansion, the shortcut keys, tip, tip positions, icons, click events, class names, and sub-toolbars can be customized
+- Emoji auto-complete, set common emoticons, support emoticon customization
+- You can use drag and drop, clipboard and paste to upload, display real-time upload progress, support CORS cross-domain upload
+- The markup HTML is automatically converted to Markdown
+- Support character counting
+- Multi-theme support
 
-For example if there is an image subfolder under your extension project workspace:
+## 🔧 Configurations
 
-\!\[feature X\]\(images/feature-x.png\)
+- `vscode-md.options.mode`: Choose default edit mode
+  - `ir`: Instant render mode
+  - `wysiwyg`: What-you-see-is-what-you-get mode
+  - `sv`: Traditional split view mode
+- `vscode-md.options.lang`: Localization
+- `vscode-md.options.outline`: Show outline of markdown
+- `vscode-md.options.counter.enable`: Whether to use counter
+- `vscode-md.image.pathType`: The markdown image path type, relative or absolute
+- `vscode-md.image.dirPath`: The directory used to store the pictures, it must be in workspace. The default is the path where Markdown is located
+- `vscode-md.theme.global`: Global theme
+- `vscode-md.theme.content`: Markdown content theme
+- `vscode-md.theme.code`: Code theme, see [Chroma](https://xyproto.github.io/splash/docs/all.html) for more information
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
 
-## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+## 🗺 Roadmap
 
-## Extension Settings
+- [ ] Impliment Image upload tool via [picgo-core](https://github.com/PicGo/PicGo-Core)
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+## 📄 License
 
-For example:
+[MIT](https://opensource.org/licenses/MIT) 
 
-This extension contributes the following settings:
+## ❤️ Thanks
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+[vditor](https://vditor.b3log.org/): An In-browser Markdown editor, support WYSIWYG, Instant Rendering (Typora-like) and Split View modes.
