@@ -24,6 +24,8 @@
 - `vscode-md.options.lang`: Localization
 - `vscode-md.options.outline`: Show outline of markdown
 - `vscode-md.options.counter.enable`: Whether to use counter
+- `vscode-md.options.toolbarConfig.hide` : Whether to hide the toolbar
+- `vscode-md.options.toolbarConfig.pin`: Whether to pin the toolbar
 - `vscode-md.image.pathType`: The markdown image path type, relative or absolute
 - `vscode-md.image.dirPath`: The directory used to store the pictures, it must be in workspace. The default is the path where Markdown is located
 - `vscode-md.theme.global`: Global theme
