@@ -2,8 +2,6 @@ import * as vscode from 'vscode';
 import * as path from 'path';
 import { getNonce } from './util';
 import * as fs from 'fs';
-import { ExtensionConfig, updateScope } from './typing';
-
 export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
   private static readonly viewType: string = 'myEdit.markdown';
 
@@ -129,6 +127,7 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
               throw err;
             }
           });
+          return;
 
           webviewPanel.webview.postMessage({
             type: 'imgSaved'
@@ -146,14 +145,16 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
   private getHtmlForWebview(webview: vscode.Webview): string {
     // Local path to script and css for the webview
 
-    // TODO: move from media/vditor to node_modules/vditor after  vditor v3.2 released
     const scriptUri1 = webview.asWebviewUri(
-      vscode.Uri.file(path.join(this.context.extensionPath, 'media', 'vditor', 'index.min.js'))
+      // vscode.Uri.file(path.join(this.context.extensionPath, 'media', 'vditor', 'index.min.js'))
+      vscode.Uri.file(path.join(this.context.extensionPath, 'node_modules', 'vditor', 'dist', 'index.min.js'))
     );
 
     const scriptUri2 = webview.asWebviewUri(vscode.Uri.file(path.join(this.context.extensionPath, 'media', 'main.js')));
+
     const styleUri1 = webview.asWebviewUri(
-      vscode.Uri.file(path.join(this.context.extensionPath, 'media', 'vditor', 'index.css'))
+      // vscode.Uri.file(path.join(this.context.extensionPath, 'media', 'vditor', 'index.css'))
+      vscode.Uri.file(path.join(this.context.extensionPath, 'node_modules', 'vditor', 'dist', 'index.css'))
     );
 
     const styleUri2 = webview.asWebviewUri(vscode.Uri.file(path.join(this.context.extensionPath, 'media', 'main.css')));
@@ -170,8 +171,8 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
 				<link href="${styleUri2}" rel="stylesheet"/>
 			</head>
       <body>
-          <div id="loading"></div>
-          <div id="vditor"></div>
+        <div id="loading"></div>
+        <div id="vditor"></div>
 				<script src="${scriptUri1}"></script>
         <script src="${scriptUri2}"></script>
 			</body>

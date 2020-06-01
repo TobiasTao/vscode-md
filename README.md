@@ -2,6 +2,10 @@
 
 **Meet all needs when writing markdown**
 
+![1590557514058.png](./docs/images/1590557514058.png)
+
+
+
 ## ✨ Features
 
 - Support three editing modes: WYSIWYG, Instant Rendering and Split View
@@ -30,15 +34,13 @@
 - `vscode-md.theme.content`: Markdown content theme
 - `vscode-md.theme.code`: Code theme, see [Chroma](https://xyproto.github.io/splash/docs/all.html) for more information
 
-
-
 ## 🗺 Roadmap
 
-- [ ] Impliment Image upload tool via [picgo-core](https://github.com/PicGo/PicGo-Core)
+- [ ] AddImage upload tool via [picgo-core](https://github.com/PicGo/PicGo-Core)
 
 ## 📄 License
 
-[MIT](https://opensource.org/licenses/MIT) 
+[MIT](https://opensource.org/licenses/MIT)
 
 ## ❤️ Thanks
 
