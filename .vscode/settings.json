@@ -10,6 +10,6 @@
   "typescript.tsc.autoDetect": "off",
   "cSpell.words": ["vditor", "xlink"],
   "vscode-md.image.pathType": "relative",
-  "vscode-md.image.dirPath": "D:/app/vscode-md/docs/images",
+  "vscode-md.image.dirPath": "../docs/images",
   "deno.enable": false
 }

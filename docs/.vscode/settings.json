@@ -1,3 +1,4 @@
 {
-  "vscode-md.image.pathType": "relative"
+  "vscode-md.image.pathType": "relative",
+  "vscode-md.image.dirPath": "../images"
 }

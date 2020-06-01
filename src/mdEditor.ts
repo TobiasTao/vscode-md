@@ -43,16 +43,36 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
       .replace(/\/[^\/]+?\.\w+$/, '/');
 
     const extConfig = vscode.workspace.getConfiguration('vscode-md');
+    console.log('extConfig:');
+    console.log(extConfig);
 
+    // image dir(fsPath)
+    let imgStoreDir: string;
+    let docDir = vscode.Uri.joinPath(document.uri, '..').fsPath;
     let imgPathPrefix = '';
     if (extConfig.image.pathType === 'relative') {
       if (extConfig.image.dirPath === '') {
         imgPathPrefix = '.';
+        imgStoreDir = docDir;
       } else {
-        imgPathPrefix = path.relative(document.uri.fsPath, extConfig.image.dirPath);
+        if (vscode.workspace.workspaceFolders) {
+          imgStoreDir = vscode.Uri.joinPath(
+            vscode.workspace.workspaceFolders[0].uri,
+            '.vscode',
+            extConfig.image.dirPath
+          ).fsPath;
+          imgPathPrefix = path.relative(docDir, imgStoreDir);
+        }
       }
     } else if (extConfig.image.pathType === 'absolute') {
-      imgPathPrefix = extConfig.image.dirPath;
+      if (path.isAbsolute(extConfig.image.dirPath)) {
+        imgPathPrefix = extConfig.image.dirPath;
+        imgStoreDir = imgPathPrefix;
+      } else {
+        vscode.window.showErrorMessage(
+          "The value of 'vscode-md.image.dirPath' should be absolute path when 'vscode-md.image.pathType' = absolute"
+        );
+      }
     }
     console.log('imgPathPrefix: ' + imgPathPrefix);
 
@@ -75,7 +95,6 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
       console.log('onDidChangeConfiguration');
     });
 
-    // Hook up event handlers so that we can synchronize the webview with the text document.
     const changeDocumentSubscription = vscode.workspace.onDidChangeTextDocument((e) => {
       if (e.document.uri.toString() === document.uri.toString()) {
       }
@@ -107,30 +126,17 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
 
         case 'img':
           let imgName = e.imgName;
-          const img = e.file;
-          const imgData = Buffer.from(img, 'binary');
-          let imgFinalPath: string;
-          // if (extConfig.image.pathType === 'absolute' || extConfig.image.pathType === 'relative') {
-          //   imgFinalPath = `${extConfig.img.dirPath}/${imgName}`;
-          // }
-          if (extConfig.image.dirPath === '') {
-            // imgFinalPath = `${document.uri.fsPath.replace(/\/[^\/]+?\.\w+$/, '')}/${imgName}`;
-            imgFinalPath = path.join(document.uri.fsPath, '..', imgName);
-          } else {
-            // imgFinalPath = `${extConfig.image.dirPath}/${imgName}`;
-            imgFinalPath = path.join(extConfig.image.dirPath, imgName);
-          }
-          console.log('imgFinalPath: ' + imgFinalPath);
-
-          fs.writeFile(imgFinalPath, imgData, (err) => {
+          const imgData = Buffer.from(e.file, 'binary');
+          let imgStorePath = path.join(imgStoreDir, imgName);
+          console.log('imgStorePath: ' + imgStorePath);
+          fs.writeFile(imgStorePath, imgData, (err) => {
             if (err) {
               throw err;
+            } else {
+              webviewPanel.webview.postMessage({
+                type: 'imgSaved'
+              });
             }
-          });
-          return;
-
-          webviewPanel.webview.postMessage({
-            type: 'imgSaved'
           });
           return;
       }

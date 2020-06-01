@@ -138,7 +138,7 @@
         "vscode-md.image.dirPath": {
           "type": "string",
           "default": "",
-          "description": "The directory used to store the pictures, it must be in workspace. The default is the path where Markdown is located"
+          "description": "The directory used to store the pictures, it must be in workspace. The default is the relative path where Markdown is located"
         }
       }
     },
