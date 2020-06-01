@@ -48,7 +48,17 @@
           "default": false,
           "description": "Show outline of markdown"
         },
-        "vscode.options.counter.enable": {
+        "vscode-md.options.toolbarConfig.hide": {
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to hide the toolbar"
+        },
+        "vscode-md.options.toolbarConfig.pin": {
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to pin the toolbar"
+        },
+        "vscode-md.options.counter.enable": {
           "type": "boolean",
           "default": true,
           "description": "Whether to use counter"
