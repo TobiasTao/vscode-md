@@ -33,10 +33,8 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
       enableScripts: true
     };
     webviewPanel.webview.html = this.getHtmlForWebview(webviewPanel.webview);
-    // const cdn = 'vscode-resource://file//' + this.getVditorDist().path;
     const cdn = webviewPanel.webview.asWebviewUri(this.getVditorDist()).toString();
 
-    // const linkBase = 'vscode-resource://file//' + document.uri.path.replace(/\/[^\/]+?\.\w+$/, '/');
     const linkBase = webviewPanel.webview
       .asWebviewUri(document.uri)
       .toString(true)
@@ -152,14 +150,12 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
     // Local path to script and css for the webview
 
     const scriptUri1 = webview.asWebviewUri(
-      // vscode.Uri.file(path.join(this.context.extensionPath, 'media', 'vditor', 'index.min.js'))
       vscode.Uri.file(path.join(this.context.extensionPath, 'node_modules', 'vditor', 'dist', 'index.min.js'))
     );
 
     const scriptUri2 = webview.asWebviewUri(vscode.Uri.file(path.join(this.context.extensionPath, 'media', 'main.js')));
 
     const styleUri1 = webview.asWebviewUri(
-      // vscode.Uri.file(path.join(this.context.extensionPath, 'media', 'vditor', 'index.css'))
       vscode.Uri.file(path.join(this.context.extensionPath, 'node_modules', 'vditor', 'dist', 'index.css'))
     );
 

@@ -3,7 +3,7 @@
   "displayName": "vscode-md",
   "description": "Meet all needs when writing markdown",
   "publisher": "TobiasTao",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "engines": {
     "vscode": "^1.45.0"
   },

@@ -2,10 +2,6 @@
 
 **Meet all needs when writing markdown**
 
-![1590557514058.png](./docs/images/1590557514058.png)
-
-
-
 ## ✨ Features
 
 - Support three editing modes: WYSIWYG, Instant Rendering and Split View
