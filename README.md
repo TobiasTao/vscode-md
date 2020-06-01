@@ -8,12 +8,12 @@
 - Support outline, mathematical formulas, mind maps, charts, flowcharts, Gantt charts, timing charts, staffs, multimedia, voice reading, heading anchors, code highlighting and copying, graphviz rendering
 - Multi-language support, built-in Chinese, English, Korean text localization
 - Built-in security filtering, export, image lazy loading, task list, at, multi-platform preview, multi-theme switching, copy to WeChat function
-- The toolbar contains 30+ items of operations. In addition to support for expansion, the shortcut keys, tip, tip positions, icons, click events, class names, and sub-toolbars can be customized
-- Emoji auto-complete, set common emoticons, support emoticon customization
-- You can use drag and drop, clipboard and paste to upload, display real-time upload progress, support CORS cross-domain upload
-- The markup HTML is automatically converted to Markdown
-- Support character counting
-- Multi-theme support
+- The toolbar contains 30+ items of operations.
+- Emoji auto-complete.
+- You can use drag and drop, clipboard and paste to store your images.
+- The markup HTML is automatically converted to Markdown.
+- Support character counting.
+- Multi-theme support.
 
 ## 🔧 Configurations
 
@@ -34,7 +34,8 @@
 
 ## 🗺 Roadmap
 
-- [ ] AddImage upload tool via [picgo-core](https://github.com/PicGo/PicGo-Core)
+- [ ] Add Image upload tool via [picgo-core](https://github.com/PicGo/PicGo-Core)
+- [ ] Custom themes
 
 ## 📄 License
 
