@@ -1,6 +1,6 @@
 ## 💡 Introduction
 
-**Meet all needs when writing markdown**
+**Meet all needs of writing markdown on vscode**
 
 ## ✨ Features
 
@@ -10,7 +10,7 @@
 - Built-in security filtering, export, image lazy loading, task list, at, multi-platform preview, multi-theme switching, copy to WeChat function
 - The toolbar contains 30+ items of operations.
 - Emoji auto-complete.
-- You can use drag and drop, clipboard and paste to store your images.
+- You can use drag and drop, clipboard and paste to store your images, and then store them locally or [upload to the server](./docs/Upload-Image.md).
 - The markup HTML is automatically converted to Markdown.
 - Support character counting.
 - Multi-theme support.
@@ -26,15 +26,16 @@
 - `vscode-md.options.counter.enable`: Whether to use counter
 - `vscode-md.options.toolbarConfig.hide` : Whether to hide the toolbar
 - `vscode-md.options.toolbarConfig.pin`: Whether to pin the toolbar
-- `vscode-md.image.pathType`: The markdown image path type, relative or absolute
+- `vscode-md.image.pathType`: The markdown image path type, relative/absolute/picgo
 - `vscode-md.image.dirPath`: The directory used to store the pictures, it must be in workspace. The default is the path where Markdown is located
 - `vscode-md.theme.global`: Global theme
 - `vscode-md.theme.content`: Markdown content theme
 - `vscode-md.theme.code`: Code theme, see [Chroma](https://xyproto.github.io/splash/docs/all.html) for more information
+- `vscode-md.picgo.configPath`: The path to your PicGo configuration.
 
 ## 🗺 Roadmap
 
-- [ ] Add Image upload tool via [picgo-core](https://github.com/PicGo/PicGo-Core)
+- [X] Support Image upload via [picgo-core](https://github.com/PicGo/PicGo-Core)
 - [ ] Custom themes
 
 ## 📄 License
