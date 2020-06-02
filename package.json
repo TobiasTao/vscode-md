@@ -1,7 +1,7 @@
 {
   "name": "vscode-md",
-  "displayName": "vscode-md",
-  "description": "Meet all needs when writing markdown",
+  "displayName": "%ext.displayName%",
+  "description": "%ext.description%",
   "publisher": "TobiasTao",
   "version": "0.1.1",
   "engines": {
@@ -132,13 +132,19 @@
           "description": "Markdown image path type",
           "enum": [
             "relative",
-            "absolute"
+            "absolute",
+            "picgo"
           ]
         },
         "vscode-md.image.dirPath": {
           "type": "string",
           "default": "",
           "description": "The directory used to store the pictures, it must be in workspace. The default is the relative path where Markdown is located"
+        },
+        "vscode-md.picgo.configPath": {
+          "type": "string",
+          "markdownDescription": "%config.configPath.description%",
+          "default": ""
         }
       }
     },
@@ -183,10 +189,7 @@
   "dependencies": {
     "vditor": "^3.2.10"
   },
-  "keywords": [
-    "markdown",
-    "editor"
-  ],
+  "keywords": "%ext.keywords%",
   "preview": true,
   "icon": "vscode-md.png",
   "homepage": "https://github.com/TobiasTao/vscode-md/blob/master/README.md",

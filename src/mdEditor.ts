@@ -1,7 +1,8 @@
 import * as vscode from 'vscode';
 import * as path from 'path';
-import { getNonce } from './util';
+import { getNonce, showError } from './utils';
 import * as fs from 'fs';
+import VSPicgo from './picgo';
 export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
   private static readonly viewType: string = 'myEdit.markdown';
 
@@ -35,6 +36,8 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
     webviewPanel.webview.html = this.getHtmlForWebview(webviewPanel.webview);
     const cdn = webviewPanel.webview.asWebviewUri(this.getVditorDist()).toString();
 
+    let picgo: VSPicgo;
+
     const linkBase = webviewPanel.webview
       .asWebviewUri(document.uri)
       .toString(true)
@@ -67,10 +70,13 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
         imgPathPrefix = extConfig.image.dirPath;
         imgStoreDir = imgPathPrefix;
       } else {
-        vscode.window.showErrorMessage(
+        showError(
           "The value of 'vscode-md.image.dirPath' should be absolute path when 'vscode-md.image.pathType' = absolute"
         );
       }
+    } else {
+      imgStoreDir = docDir;
+      picgo = new VSPicgo(webviewPanel);
     }
     console.log('imgPathPrefix: ' + imgPathPrefix);
 
@@ -129,11 +135,18 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
           console.log('imgStorePath: ' + imgStorePath);
           fs.writeFile(imgStorePath, imgData, (err) => {
             if (err) {
+              showError(err.message);
               throw err;
             } else {
-              webviewPanel.webview.postMessage({
-                type: 'imgSaved'
-              });
+              if (extConfig.image.pathType === 'picgo') {
+                picgo.upload([imgStorePath]).then(() => {
+                  fs.unlinkSync(imgStorePath);
+                });
+              } else {
+                webviewPanel.webview.postMessage({
+                  type: 'imgSaved'
+                });
+              }
             }
           });
           return;

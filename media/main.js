@@ -149,13 +149,23 @@
       case 'imgSaved':
         console.log('insertValue: image');
         vditor.insertValue(` ![${imgName}](${imgPath})`);
-        this.document.getElementById('loading').innerHTML = '';
+        clearLoading();
+        return;
+      case 'picgo':
+        console.log('picgo: ' + message.urlText);
+        vditor.insertValue(message.urlText);
+        clearLoading();
+        return;
     }
   });
 
   function genImgName() {
     var date = new Date(Date.now());
     return date.getTime();
+  }
+
+  function clearLoading() {
+    this.document.getElementById('loading').innerHTML = '';
   }
 
   function createLoading() {
