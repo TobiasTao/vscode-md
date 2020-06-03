@@ -35,8 +35,8 @@
         },
         "vscode-md.options.lang": {
           "type": "string",
-          "default": "zh_CN",
-          "description": "Tooltips language",
+          "default": "en_US",
+          "description": "Localization, i18n",
           "enum": [
             "zh_CN",
             "en_US",
@@ -189,7 +189,11 @@
   "dependencies": {
     "vditor": "^3.2.10"
   },
-  "keywords": "%ext.keywords%",
+  "keywords": [
+    "markdown",
+    "vditor",
+    "picgo"
+  ],
   "preview": true,
   "icon": "vscode-md.png",
   "homepage": "https://github.com/TobiasTao/vscode-md/blob/master/README.md",

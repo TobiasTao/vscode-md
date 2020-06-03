@@ -5,6 +5,9 @@
 ## ✨ Features
 
 - Support three editing modes: WYSIWYG, Instant Rendering and Split View
+
+<details> <summary>Demo</summary> <img src="./docs/images/1.gif"/> </details>
+
 - Support outline, mathematical formulas, mind maps, charts, flowcharts, Gantt charts, timing charts, staffs, multimedia, voice reading, heading anchors, code highlighting and copying, graphviz rendering
 - Multi-language support, built-in Chinese, English, Korean text localization
 - Built-in security filtering, export, image lazy loading, task list, at, multi-platform preview, multi-theme switching, copy to WeChat function
@@ -21,7 +24,7 @@
   - `ir`: Instant render mode
   - `wysiwyg`: What-you-see-is-what-you-get mode
   - `sv`: Traditional split view mode
-- `vscode-md.options.lang`: Localization
+- `vscode-md.options.lang`: Localization, i18n
 - `vscode-md.options.outline`: Show outline of markdown
 - `vscode-md.options.counter.enable`: Whether to use counter
 - `vscode-md.options.toolbarConfig.hide` : Whether to hide the toolbar
@@ -33,10 +36,10 @@
 - `vscode-md.theme.code`: Code theme, see [Chroma](https://xyproto.github.io/splash/docs/all.html) for more information
 - `vscode-md.picgo.configPath`: The path to your PicGo configuration.
 
-## 🗺 Roadmap
+## 📚 Wiki
 
-- [X] Support Image upload via [picgo-core](https://github.com/PicGo/PicGo-Core)
-- [ ] Custom themes
+- [Image Upload](./docs/Upload-Image.md)
+- [Shortcut key](https://hacpai.com/article/1582778815353#English)
 
 ## 📄 License
 
@@ -45,3 +48,5 @@
 ## ❤️ Thanks
 
 [vditor](https://vditor.b3log.org/): An In-browser Markdown editor, support WYSIWYG, Instant Rendering (Typora-like) and Split View modes.
+
+[picgo](https://picgo.github.io/PicGo-Doc/en/guide/#instruction): New Experience of Image Upload and Management

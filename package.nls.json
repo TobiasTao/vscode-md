@@ -1,6 +1,5 @@
 {
   "ext.displayName": "vscode-md",
   "ext.description": "Meet all needs of writing markdown on vscode",
-  "ext.keywords": ["markdown", "vditor", "picgo"],
   "config.configPath.description": "The path to your PicGo configuration."
 }

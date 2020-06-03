@@ -1,167 +1,315 @@
-### Headings
+# Headers
 
-To create a heading, add one to six `#` symbols before your heading text. The number of `#` you use will determine the size of the heading.
+```markdown
 
-```uage-clean
-# The largest heading
-## The second largest heading
-###### The smallest heading
+# H1
+## H2
+### H3
+#### H4
+##### H5
+###### H6
+
+Alternatively, for H1 and H2, an underline-ish style:
+
+Alt-H1
+======
+
+Alt-H2
+------
 ```
 
-![Rendered H1, H2, and H6 headings](https://help.github.com/assets/images/help/writing/headings-rendered.png)
+# H1
 
-### Styling text
+## H2
 
-You can indicate emphasis with bold, italic, or strikethrough text.
+### H3
 
+#### H4
 
-| Style | Syntax | Keyboard shortcut | Example | Output |
-| - | - | - | - | - |
-| Bold | `** **` or `__ __` | command/control + b | `**This is bold text**` | **This is bold text** |
-| Italic | `* *` or `_ _` | command/control + i | `*This text is italicized*` | *This text is italicized* |
-| Strikethrough | `~~ ~~` |   | `~~This was mistaken text~~` | ~This was mistaken text~ |
-| Bold and nested italic | `** **` and `_ _` |   | `**This text is _extremely_ important**` | **This text is *extremely* important** |
-| All bold and italic | `*** ***` |   | `***All this text is important***` | ***All this text is important*** |
+##### H5
 
-### Quoting text
+###### H6
 
-You can quote text with a `>`.
+Alternatively, for H1 and H2, an underline-ish style:
 
-```uage-applescript
-In the words of Abraham Lincoln:
+# Alt-H1
 
-> Pardon my French
+## Alt-H2
+
+# Emphasis
+
+```markdown
+Emphasis, aka italics, with _asterisks_ or _underscores_.
+Strong emphasis, aka bold, with **asterisks** or **underscores**.
+Combined emphasis with **asterisks and _underscores_**.
+Strikethrough uses two tildes. ~~Scratch this.~~
 ```
 
-![Rendered quoted text](https://help.github.com/assets/images/help/writing/quoted-text-rendered.png)
+Emphasis, aka italics, with _asterisks_ or _underscores_.
+Strong emphasis, aka bold, with **asterisks** or **underscores**.
+Combined emphasis with **asterisks and _underscores_**.
+Strikethrough uses two tildes. ~~Scratch this.~~
 
-### Quoting code
+# Lists
 
-You can call out code or a command within a sentence with single backticks. The text within the backticks will not be formatted.
+```
+1. First ordered list item
+2. Another item
+  * Unordered sub-list. 
+1. Actual numbers don't matter, just that it's a number
+  1. Ordered sub-list
+4. And another item.  
+   
+   Some text that should be aligned with the above item.
 
-```uage-sql
-Use `git status` to list all new or modified files that haven't yet been committed.
+* Unordered list can use asterisks
+- Or minuses
++ Or pluses
 ```
 
-![Rendered inline code block](https://help.github.com/assets/images/help/writing/inline-code-rendered.png)
+1. First ordered list item
+2. Another item
 
-To format code or text into its own distinct block, use triple backticks.
+* Unordered sub-list.
 
-<pre>Some basic Git commands are:
+1. Actual numbers don't matter, just that it's a number
+2. Ordered sub-list
+3. And another item.
+
+   Some text that should be aligned with the above item.
+
+* Unordered list can use asterisks
+- Or minuses
+
++ Or pluses
+
+# Links
+
+There are two ways to create links.
+
 ```
-git status
-git add
-git commit
-```
-</pre>
+[I'm an inline-style link](https://www.google.com)
 
-![Rendered code block](https://help.github.com/assets/images/help/writing/code-block-rendered.png)
+[I'm a reference-style link][Arbitrary case-insensitive reference text]
 
-You can add an optional language identifier to enable syntax highlighting in your fenced code block.
+[You can use numbers for reference-style link definitions][1]
 
-For example, to syntax highlight Ruby code:
+Or leave it empty and use the [link text itself]
 
-```uage-autohotkey
-```ruby
-require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
-```
+URLs and URLs in angle brackets will automatically get turned into links. 
+http://www.example.com or <http://www.example.com> and sometimes 
+example.com (but not on Github, for example).
 
-![Rendered code block with Ruby syntax highlighting](https://help.github.com/assets/images/help/writing/code-block-syntax-highlighting-rendered.png)
+Some text to show that the reference links can follow later.
 
-### Links
-
-You can create an inline link by wrapping link text in brackets `[ ]`, and then wrapping the URL in parentheses `( )`.
-
-`This site was built using [GitHub Pages](https://pages.github.com/).`
-
-![Rendered link](https://help.github.com/assets/images/help/writing/link-rendered.png)
-
-### Section links
-
-You can link directly to a section in a rendered file by hovering over the section heading to expose the link:
-
-![Section link within the README file for the github/scientist repository](https://help.github.com/assets/images/help/repository/readme-links.png)
-
-### Relative links
-
-You can define relative links and image paths in your rendered files to help readers navigate to other files in your repository.
-
-A relative link is a link that is relative to the current file. For example, if you have a README file in root of your repository, and you have another file in *docs/CONTRIBUTING.md*, the relative link to *CONTRIBUTING.md* in your README might look like this:
-
-```uage-markdown
-[Contribution guidelines for this project](docs/CONTRIBUTING.md)
+[arbitrary case-insensitive reference text]: https://www.mozilla.org
+[1]: http://slashdot.org
+[link text itself]: http://www.reddit.com
 ```
 
-GitHub will automatically transform your relative link or image path based on whatever branch you're currently on, so that the link or path always works. You can use all relative link operands, such as `.` and `..`.
+[I'm an inline-style link](https://www.google.com)
 
-Relative links are easier for users who clone your repository. Absolute links may not work in clones of your repository - we recommend using relative links to refer to other files within your repository.
+[I'm a reference-style link][arbitrary case-insensitive reference text]
 
-### Lists
+[You can use numbers for reference-style link definitions][1]
 
-You can make an unordered list by preceding one or more lines of text with `-` or `*`.
+Or leave it empty and use the [link text itself]
 
-```uage-asciidoc
-- George Washington
-- John Adams
-- Thomas Jefferson
+URLs and URLs in angle brackets will automatically get turned into links.
+http://www.example.com or [http://www.example.com](http://www.example.com) and sometimes
+example.com (but not on Github, for example).
+
+Some text to show that the reference links can follow later.
+
+# Images
+
+Here's our logo (hover to see the title text):
+
+```
+Here's our logo:
+
+Inline-style: 
+![alt text](../vscode-md.png)
+
+Reference-style: 
+![alt text][logo]
+
+[logo]: ../vscode-md.png
 ```
 
-![Rendered unordered list](https://help.github.com/assets/images/help/writing/unordered-list-rendered.png)
+Here's our logo (hover to see the title text):
 
-To order your list, precede each line with a number.
+Inline-style:
+![alt text](../vscode-md.png)
 
-```uage-graphql
-1. James Madison
-2. James Monroe
-3. John Quincy Adams
+Reference-style:
+![alt text](../vscode-md.png)
+
+# Code and Syntax Highlighting
+
+Code blocks are part of the Markdown spec, but syntax highlighting isn't. However, many renderers -- like Github's and Markdown Here -- support syntax highlighting. Markdown Here supports highlighting for dozens of languages (and not-really-languages, like diffs and HTTP headers); to see the complete list, and how to write the language names, see the highlight.js demo page.
+
+```
+Inline `code` has `back-ticks around` it.
 ```
 
-![Rendered ordered list](https://help.github.com/assets/images/help/writing/ordered-list-rendered.png)
+Inline code has back-ticks around it.
 
-#### Nested Lists
+Blocks of code are either fenced by lines with three back-ticks ```, or are indented with four spaces. I recommend only using the fenced code blocks -- they're easier and only they support syntax highlighting.
 
-You can create a nested list by indenting one or more list items below another item.
-
-To create a nested list using the web editor on GitHub or a text editor that uses a monospaced font, like [Atom](https://atom.io/), you can align your list visually. Type space characters in front of your nested list item, until the list marker character (`-` or `*`) lies directly below the first character of the text in the item above it.
-
-```uage-applescript
-1. First list item
-   - First nested list item
-     - Second nested list item
+```
+```javascript
+var s = "JavaScript syntax highlighting";
+alert(s);
 ```
 
-![Nested list with alignment highlighted](https://help.github.com/assets/images/help/writing/nested-list-alignment.png)
-
-![List with two levels of nested items](https://help.github.com/assets/images/help/writing/nested-list-example-1.png)
-
-### Task lists
-
-To create a task list, preface list items with a regular space character followed by `[ ]`. To mark a task as complete, use `[x]`.
-
-- [ ]
-
-```uage-inform7
-- [x] Finish my changes
-- [ ] Push my commits to GitHub
-- [ ] Open a pull request
+```python
+s = "Python syntax highlighting"
+print s
 ```
 
-![Rendered task list](https://help.github.com/assets/images/help/writing/task-list-rendered.png)
+```
+No language indicated, so no syntax highlighting. 
+But let's throw in a <b>tag</b>.
+```
 
-If a task list item description begins with a parenthesis, you'll need to escape it with `\`:
+```
 
-`- [ ] \(Optional) Open a followup issu`
+```javascript
+var s = 'JavaScript syntax highlighting';
+alert(s);
+```
 
-Using emoji
+```python
+s = "Python syntax highlighting"
+print s
+```
 
-You can add emoji to your writing by typing `:EMOJICODE:`.
+```
+No language indicated, so no syntax highlighting.
+But let's throw in a <b>tag</b>.
 
-`@octocat :+1: This PR looks great - it's ready to merge! :shipit:`
+```
 
-![Rendered emoji](https://help.github.com/assets/images/help/writing/emoji-rendered.png)
+# Tables
 
-Typing `:` will bring up a list of suggested emoji. The list will filter as you type, so once you find the emoji you're looking for, press **Tab** or **Enter** to complete the highlighted result.
+Tables aren't part of the core Markdown spec, but they are part of GFM and Markdown Here supports them. They are an easy way of adding tables to your email -- a task that would otherwise require copy-pasting from another application.
 
-For a full list of available emoji and codes, check out [emoji-cheat-sheet.com](http://emoji-cheat-sheet.com/).
+```
+Colons can be used to align columns.
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
+There must be at least 3 dashes separating each header cell.
+The outer pipes (|) are optional, and you don't need to make the raw Markdown line up prettily. You can also use inline Markdown.
+
+Markdown | Less | Pretty
+--- | --- | ---
+*Still* | `renders` | **nicely**
+1 | 2 | 3
+```
+
+Colons can be used to align columns.
+
+
+| Tables | Are | Cool |
+| - | :-: | -: |
+| col 3 is | right-aligned | $1600 |
+| col 2 is | centered | $12 |
+| zebra stripes | are neat | $1 |
+
+There must be at least 3 dashes separating each header cell.
+
+The outer pipes (|) are optional, and you don't need to make the raw Markdown line up prettily. You can also use inline Markdown.
+
+
+| Markdown | Less | Pretty |
+| - | - | - |
+| _Still_ | `renders` | **nicely** |
+| 1 | 2 | 3 |
+
+# Blockquotes
+
+```markdown
+> Blockquotes are very handy in email to emulate reply text.
+> This line is part of the same quote.
+
+Quote break.
+
+> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote. 
+```
+
+> Blockquotes are very handy in email to emulate reply text.
+> This line is part of the same quote.
+
+Quote break.
+
+> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can _put_ **Markdown** into a blockquote.
+
+# Inline HTML
+
+You can also use raw HTML in your Markdown, and it'll mostly work pretty well.
+
+```markdown
+<dl>
+  <dt>Definition list</dt>
+  <dd>Is something people use sometimes.</dd>
+
+  <dt>Markdown in HTML</dt>
+  <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
+</dl>
+
+
+```
+
+# Horizontal Rule
+
+```markdown
+UnderscoresUnderscoresThree or more...
+
+---
+
+Hyphens
+
+***
+
+Asterisks
+
+___
+
+Underscores
+```
+
+
+
+UnderscoresUnderscoresThree or more...
+
+---
+
+Hyphens
+
+---
+
+Asterisks
+
+---
+
+Underscores
+
+# Using emoji
+
+You can add emoji to your writing by typing :EMOJICODE:.
+
+```
+@octocat :+1: This PR looks great - it's ready to merge! :shipit:
+```
+
+@octocat 👍 This PR looks great - it's ready to merge! :shipit:
+
+Typing : will bring up a list of suggested emoji. The list will filter as you type, so once you find the emoji you're looking for, press Tab or Enter to complete the highlighted result.For a full list of available emoji and codes, check out emoji-cheat-sheet.com.UnderscoresLine Breaks
+
+My basic recommendation for learning how line breaks work is to experiment and discover -- hit <Enter> once (i.e., insert one newline), then hit it twice (i.e., insert two newlines), see what happens. You'll soon learn to get what you want. "Markdown Toggle" is your friend.
