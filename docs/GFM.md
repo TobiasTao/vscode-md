@@ -144,8 +144,12 @@ Here's our logo (hover to see the title text):
 Inline-style:
 ![alt text](../vscode-md.png)
 
+
+
 Reference-style:
 ![alt text](../vscode-md.png)
+
+
 
 # Code and Syntax Highlighting
 

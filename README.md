@@ -6,7 +6,7 @@
 
 - Support three editing modes: WYSIWYG, Instant Rendering and Split View
 
-<details> <summary>Demo</summary> <img src="./docs/images/1.gif"/> </details>
+![](./docs/images/1.gif)
 
 - Support outline, mathematical formulas, mind maps, charts, flowcharts, Gantt charts, timing charts, staffs, multimedia, voice reading, heading anchors, code highlighting and copying, graphviz rendering
 - Multi-language support, built-in Chinese, English, Korean text localization
