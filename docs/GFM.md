@@ -1,21 +1,23 @@
 # Headers
 
 ```markdown
-
 # H1
+
 ## H2
+
 ### H3
+
 #### H4
+
 ##### H5
+
 ###### H6
 
 Alternatively, for H1 and H2, an underline-ish style:
 
-Alt-H1
-======
+# Alt-H1
 
-Alt-H2
-------
+## Alt-H2
 ```
 
 # H1
@@ -55,11 +57,11 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 ```
 1. First ordered list item
 2. Another item
-  * Unordered sub-list. 
+  * Unordered sub-list.
 1. Actual numbers don't matter, just that it's a number
   1. Ordered sub-list
-4. And another item.  
-   
+4. And another item.
+
    Some text that should be aligned with the above item.
 
 * Unordered list can use asterisks
@@ -70,7 +72,7 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 1. First ordered list item
 2. Another item
 
-* Unordered sub-list.
+- Unordered sub-list.
 
 1. Actual numbers don't matter, just that it's a number
 2. Ordered sub-list
@@ -78,10 +80,10 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 
    Some text that should be aligned with the above item.
 
-* Unordered list can use asterisks
-- Or minuses
+- Unordered list can use asterisks
+* Or minuses
 
-+ Or pluses
+- Or pluses
 
 # Links
 
@@ -96,8 +98,8 @@ There are two ways to create links.
 
 Or leave it empty and use the [link text itself]
 
-URLs and URLs in angle brackets will automatically get turned into links. 
-http://www.example.com or <http://www.example.com> and sometimes 
+URLs and URLs in angle brackets will automatically get turned into links.
+http://www.example.com or <http://www.example.com> and sometimes
 example.com (but not on Github, for example).
 
 Some text to show that the reference links can follow later.
@@ -128,10 +130,10 @@ Here's our logo (hover to see the title text):
 ```
 Here's our logo:
 
-Inline-style: 
+Inline-style:
 ![alt text](../vscode-md.png)
 
-Reference-style: 
+Reference-style:
 ![alt text][logo]
 
 [logo]: ../vscode-md.png
@@ -157,11 +159,11 @@ Inline code has back-ticks around it.
 
 Blocks of code are either fenced by lines with three back-ticks ```, or are indented with four spaces. I recommend only using the fenced code blocks -- they're easier and only they support syntax highlighting.
 
-```
+````
 ```javascript
 var s = "JavaScript syntax highlighting";
 alert(s);
-```
+````
 
 ```python
 s = "Python syntax highlighting"
@@ -169,16 +171,16 @@ print s
 ```
 
 ```
-No language indicated, so no syntax highlighting. 
+No language indicated, so no syntax highlighting.
 But let's throw in a <b>tag</b>.
 ```
 
-```
-
+````
 ```javascript
 var s = 'JavaScript syntax highlighting';
 alert(s);
 ```
+````
 
 ```python
 s = "Python syntax highlighting"
@@ -218,9 +220,9 @@ Colons can be used to align columns.
 
 | Tables | Are | Cool |
 | - | :-: | -: |
-| col 3 is | right-aligned | $1600 |
-| col 2 is | centered | $12 |
-| zebra stripes | are neat | $1 |
+| col 3 is | right-aligned | \$1600 |
+| col 2 is | centered | \$12 |
+| zebra stripes | are neat | \$1 |
 
 There must be at least 3 dashes separating each header cell.
 
@@ -240,7 +242,7 @@ The outer pipes (|) are optional, and you don't need to make the raw Markdown li
 
 Quote break.
 
-> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote. 
+> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can _put_ **Markdown** into a blockquote.
 ```
 
 > Blockquotes are very handy in email to emulate reply text.
@@ -262,8 +264,6 @@ You can also use raw HTML in your Markdown, and it'll mostly work pretty well.
   <dt>Markdown in HTML</dt>
   <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
 </dl>
-
-
 ```
 
 # Horizontal Rule
@@ -275,16 +275,14 @@ UnderscoresUnderscoresThree or more...
 
 Hyphens
 
-***
+---
 
 Asterisks
 
-___
+---
 
 Underscores
 ```
-
-
 
 UnderscoresUnderscoresThree or more...
 

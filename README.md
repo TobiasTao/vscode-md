@@ -14,7 +14,7 @@
 - The toolbar contains 30+ items of operations.
 - Emoji auto-complete.
 - You can use drag and drop, clipboard and paste to store your images, and then store them locally or [upload to the server](./docs/Upload-Image.md).
-- The markup HTML is automatically converted to Markdown.
+- The markup  HTML is automatically converted to Markdown.
 - Support character counting.
 - Multi-theme support.
 

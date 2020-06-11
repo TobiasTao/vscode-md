@@ -3,7 +3,7 @@
   "displayName": "%ext.displayName%",
   "description": "%ext.description%",
   "publisher": "TobiasTao",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "engines": {
     "vscode": "^1.45.0"
   },
@@ -192,6 +192,10 @@
   "keywords": [
     "markdown",
     "vditor",
+    "flowchart",
+    "gantt",
+    "katex",
+    "mathjax",
     "picgo"
   ],
   "preview": true,
