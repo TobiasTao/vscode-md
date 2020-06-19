@@ -85,13 +85,10 @@
         clearTimeout(timeout);
       }, 3000);
     },
-    after() {
-      vditor.vditor.lute.SetLinkBase(linkBase);
-    }
+    after() {}
   };
   function initVditor() {
     vditor = new Vditor('vditor', options);
-    vditor.setTheme(editorTheme.global, editorTheme.content, editorTheme.code);
   }
 
   function saveDoc() {
@@ -145,8 +142,10 @@
     switch (message.type) {
       case 'all':
         options = Object.assign(options, message.options);
-        linkBase = message.linkBase;
-        editorTheme = message.theme;
+        options.preview.markdown.linkBase = message.linkBase;
+        options.theme = message.theme.global;
+        options.preview.markdown.theme = message.theme.content;
+        options.preview.hljs.style = message.theme.code;
         imgConfig = message.imgConfig;
         imgPathPrefix = message.imgPathPrefix;
         initVditor();
