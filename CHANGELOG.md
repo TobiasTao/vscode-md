@@ -1,9 +1,15 @@
-# Change Log
+## v0.2.2
 
-All notable changes to the "vscode-md" extension will be documented in this file.
+### ✨Features
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+- Support mindmap:
 
-## [Unreleased]
+![](docs/images/mindmap.gif)
 
-- Initial release
+- Add row and column buttons to the table in 'wysiwyg' mode:
+
+![](docs\images\table-add-delete-tooltip.gif)
+
+### 🐛 Bug Fixes
+
+- Outline navigation failure #4
