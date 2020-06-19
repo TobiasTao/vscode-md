@@ -44,8 +44,6 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
       .replace(/\/[^\/]+?\.\w+$/, '/');
 
     const extConfig = vscode.workspace.getConfiguration('vscode-md');
-    console.log('extConfig:');
-    console.log(extConfig);
 
     // image dir(fsPath)
     let imgStoreDir: string;
@@ -81,11 +79,27 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
     console.log('imgPathPrefix: ' + imgPathPrefix);
 
     function updateWebview() {
+      console.log('linkBase: ' + linkBase);
+      const vditorOptions = Object.assign({}, extConfig.options, {
+        value: document.getText(),
+        cdn: cdn,
+        theme: extConfig.theme.global,
+        preview: {
+          markdown: {
+            linkBase: linkBase,
+            theme: extConfig.theme.content
+          },
+          hljs: {
+            style: extConfig.theme.code
+          }
+        }
+      });
+      console.log('vditorOptions:');
+      console.log(vditorOptions);
+
       webviewPanel.webview.postMessage({
         type: 'all',
-        options: Object.assign({ value: document.getText(), cdn: cdn }, extConfig.options),
-        linkBase: linkBase,
-        theme: extConfig.theme,
+        options: vditorOptions,
         imgConfig: extConfig.image,
         imgPathPrefix
       });

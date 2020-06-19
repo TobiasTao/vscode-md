@@ -141,11 +141,17 @@
     console.log('update: ' + message.type);
     switch (message.type) {
       case 'all':
-        options = Object.assign(options, message.options);
-        options.preview.markdown.linkBase = message.linkBase;
-        options.theme = message.theme.global;
-        options.preview.markdown.theme = message.theme.content;
-        options.preview.hljs.style = message.theme.code;
+        console.log('message.options: ');
+        console.log(message.options);
+
+        Object.assign(options, message.options);
+        console.log(options);
+
+        // options.preview.markdown.linkBase = message.linkBase;
+
+        // options.theme = message.theme.global;
+        // options.preview.markdown.theme = message.theme.content;
+        // options.preview.hljs.style = message.theme.code;
         imgConfig = message.imgConfig;
         imgPathPrefix = message.imgPathPrefix;
         initVditor();
