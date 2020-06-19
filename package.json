@@ -58,6 +58,11 @@
           "default": false,
           "description": "Whether to pin the toolbar"
         },
+        "vscode-md.options.preview.hljs.lineNumber": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to enable line number"
+        },
         "vscode-md.options.counter.enable": {
           "type": "boolean",
           "default": true,

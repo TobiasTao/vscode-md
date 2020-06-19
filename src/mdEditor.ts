@@ -79,8 +79,10 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
     console.log('imgPathPrefix: ' + imgPathPrefix);
 
     function updateWebview() {
-      console.log('linkBase: ' + linkBase);
-      const vditorOptions = Object.assign({}, extConfig.options, {
+      console.log("extConfig.get('options')");
+      console.log(extConfig.get('options'));
+
+      const vditorOptions = Object.assign({}, extConfig.get('options'), {
         value: document.getText(),
         cdn: cdn,
         theme: extConfig.theme.global,
@@ -90,7 +92,8 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
             theme: extConfig.theme.content
           },
           hljs: {
-            style: extConfig.theme.code
+            style: extConfig.theme.code,
+            lineNumber: extConfig.options.preview.hljs.lineNumber
           }
         }
       });
