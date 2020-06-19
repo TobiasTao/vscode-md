@@ -8,7 +8,7 @@
 
 - Add row and column buttons to the table in 'wysiwyg' mode:
 
-![](docs\images\table-add-delete-tooltip.gif)
+![](docs/images/table-add-delete-tooltip.gif)
 
 ### 🐛 Bug Fixes
 
