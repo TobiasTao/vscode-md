@@ -187,7 +187,7 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
-    "vditor": "^3.2.12"
+    "vditor": "^3.3.1"
   },
   "keywords": [
     "markdown",
