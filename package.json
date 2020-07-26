@@ -176,7 +176,7 @@
     "@types/glob": "^7.1.1",
     "@types/mocha": "^7.0.2",
     "@types/node": "^13.11.0",
-    "@types/vscode": "^1.45.0",
+    "@types/vscode": "^1.47.0",
     "@typescript-eslint/eslint-plugin": "^2.30.0",
     "@typescript-eslint/parser": "^2.30.0",
     "eslint": "^6.8.0",
@@ -186,13 +186,13 @@
     "prettier": "^2.0.5",
     "ts-loader": "^7.0.5",
     "typescript": "^3.8.3",
-    "vsce": "^1.76.1",
+    "vsce": "^1.77.0",
     "vscode-test": "^1.4.0",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
-    "vditor": "^3.3.1"
+    "vditor": "^3.3.11"
   },
   "keywords": [
     "markdown",

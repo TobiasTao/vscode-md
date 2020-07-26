@@ -88,8 +88,10 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
         theme: extConfig.theme.global,
         preview: {
           markdown: {
-            linkBase: linkBase,
-            theme: extConfig.theme.content
+            linkBase: linkBase
+          },
+          theme: {
+            current: extConfig.theme.content
           },
           hljs: {
             style: extConfig.theme.code,
