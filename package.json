@@ -43,6 +43,15 @@
             "ko_KR"
           ]
         },
+        "vscode-md.options.icon": {
+          "type": "string",
+          "default": "material",
+          "description": "Set toolbar icon style, support ant design and material design",
+          "enum": [
+            "material",
+            "ant"
+          ]
+        },
         "vscode-md.options.outline": {
           "type": "boolean",
           "default": false,
