@@ -72,6 +72,17 @@
           "default": true,
           "description": "Whether to enable line number"
         },
+        "vscode-md.options.preview.actions": {
+          "type": "array",
+          "default": [
+            "desktop",
+            "tablet",
+            "mobile",
+            "mp-wechat",
+            "zhihu"
+          ],
+          "description": "custom toolbar actions of preview"
+        },
         "vscode-md.options.counter.enable": {
           "type": "boolean",
           "default": true,

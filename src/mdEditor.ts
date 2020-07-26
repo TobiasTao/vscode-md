@@ -96,7 +96,8 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
           hljs: {
             style: extConfig.theme.code,
             lineNumber: extConfig.options.preview.hljs.lineNumber
-          }
+          },
+          actions: extConfig.options.preview.actions
         }
       });
       console.log('vditorOptions:');

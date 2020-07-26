@@ -62,7 +62,7 @@
       },
       {
         name: 'more',
-        toolbar: ['both', 'export', 'preview', 'format', 'devtools']
+        toolbar: ['both', 'export', 'preview', 'devtools']
       }
     ],
     toolbarConfig: {
@@ -85,7 +85,9 @@
         clearTimeout(timeout);
       }, 3000);
     },
-    after() {}
+    after() {
+      vditor.setTheme(options.theme, options.preview.current);
+    }
   };
   function initVditor() {
     vditor = new Vditor('vditor', options);
@@ -147,11 +149,6 @@
         Object.assign(options, message.options);
         console.log(options);
 
-        // options.preview.markdown.linkBase = message.linkBase;
-
-        // options.theme = message.theme.global;
-        // options.preview.markdown.theme = message.theme.content;
-        // options.preview.hljs.style = message.theme.code;
         imgConfig = message.imgConfig;
         imgPathPrefix = message.imgPathPrefix;
         initVditor();
