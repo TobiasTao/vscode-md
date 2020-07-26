@@ -24,7 +24,9 @@ In addition, you can also use [Github](#Github), [Imgur](#Imgur), [Qiniu Cloud](
 
 3. Set `vscode-md.picgo.configPath`:
 
-![1591096424517.png](./images/1591096424517.png)
+![1591096424517.png](images/1591096424517.png)
+
+
 
 
 
@@ -59,7 +61,7 @@ For more information -> 📖 https://picgo.github.io/PicGo-Doc/en/guide/config.h
     "uploader": "imgur",
     "imgur": {
       "clientId": "",                             // your clientId
-      "proxy": ""                                 // proxy address, only http supported                 
+      "proxy": ""                                 // proxy address, only http supported     
     }
   }
 }

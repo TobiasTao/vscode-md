@@ -144,12 +144,8 @@ Here's our logo (hover to see the title text):
 Inline-style:
 ![alt text](../vscode-md.png)
 
-
-
 Reference-style:
 ![alt text](../vscode-md.png)
-
-
 
 # Code and Syntax Highlighting
 
@@ -164,7 +160,6 @@ Inline code has back-ticks around it.
 Blocks of code are either fenced by lines with three back-ticks ```, or are indented with four spaces. I recommend only using the fenced code blocks -- they're easier and only they support syntax highlighting.
 
 ````
-```javascript
 var s = "JavaScript syntax highlighting";
 alert(s);
 ````
@@ -194,7 +189,6 @@ print s
 ```
 No language indicated, so no syntax highlighting.
 But let's throw in a <b>tag</b>.
-
 ```
 
 # Tables
@@ -254,7 +248,7 @@ Quote break.
 
 Quote break.
 
-> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can _put_ **Markdown** into a blockquote.
+> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can _put_**Markdown** into a blockquote.
 
 # Inline HTML
 
@@ -310,8 +304,8 @@ You can add emoji to your writing by typing :EMOJICODE:.
 @octocat :+1: This PR looks great - it's ready to merge! :shipit:
 ```
 
-@octocat 👍 This PR looks great - it's ready to merge! :shipit:
+s@octocat 👍 This PR looks great - it's ready to merge! :shipit:
 
 Typing : will bring up a list of suggested emoji. The list will filter as you type, so once you find the emoji you're looking for, press Tab or Enter to complete the highlighted result.For a full list of available emoji and codes, check out emoji-cheat-sheet.com.UnderscoresLine Breaks
 
-My basic recommendation for learning how line breaks work is to experiment and discover -- hit <Enter> once (i.e., insert one newline), then hit it twice (i.e., insert two newlines), see what happens. You'll soon learn to get what you want. "Markdown Toggle" is your friend.
+My basic recommendation for learning how line breaks work is to experiment and discover -- hit <enter> once (i.e., insert one newline), then hit it twice (i.e., insert two newlines), see what happens. You'll soon learn to get what you want. "Markdown Toggle" is your friend.
