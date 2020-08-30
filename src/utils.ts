@@ -1,7 +1,7 @@
 import * as path from 'path';
 import { IUploadName, IOutputUrl } from './picgo';
 import { window } from 'vscode';
-import { ImgInfo } from 'picgo/dist/src/utils/interfaces';
+import { IImgInfo } from 'picgo/dist/src/utils/interfaces';
 
 export function formatString(tplString: string, data: IUploadName | IOutputUrl) {
   const keys = Object.keys(data);
@@ -33,7 +33,7 @@ export function showError(message: string) {
 //   window.showInformationMessage(`${nls['ext.displayName']}: ${message}`);
 // }
 
-export function getUploadedName(imgInfo: ImgInfo): string {
+export function getUploadedName(imgInfo: IImgInfo): string {
   let fullName;
   if (!imgInfo.fileName) {
     fullName = '';

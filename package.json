@@ -5,7 +5,7 @@
   "publisher": "TobiasTao",
   "version": "0.3.0",
   "engines": {
-    "vscode": "^1.45.0"
+    "vscode": "^1.47.0"
   },
   "categories": [
     "Other"
@@ -40,7 +40,8 @@
           "enum": [
             "zh_CN",
             "en_US",
-            "ko_KR"
+            "ko_KR",
+            "ja_JP"
           ]
         },
         "vscode-md.options.icon": {
@@ -83,6 +84,10 @@
           ],
           "description": "custom toolbar actions of preview"
         },
+        "vscode-md.options.preview.markdown.mark": {
+          "type": "boolean",
+          "description": "Enable mark syntax"
+        },
         "vscode-md.options.counter.enable": {
           "type": "boolean",
           "default": true,
@@ -104,7 +109,8 @@
           "enum": [
             "light",
             "dark",
-            "wechat"
+            "wechat",
+            "ant design"
           ]
         },
         "vscode-md.theme.code": {
@@ -196,23 +202,23 @@
     "@types/glob": "^7.1.1",
     "@types/mocha": "^7.0.2",
     "@types/node": "^13.11.0",
-    "@types/vscode": "^1.47.0",
+    "@types/vscode": "^1.48.0",
     "@typescript-eslint/eslint-plugin": "^2.30.0",
     "@typescript-eslint/parser": "^2.30.0",
     "eslint": "^6.8.0",
     "glob": "^7.1.6",
-    "mocha": "^7.1.2",
-    "picgo": "^1.4.8",
+    "mocha": "^7.2.0",
+    "picgo": "^1.4.11",
     "prettier": "^2.0.5",
     "ts-loader": "^7.0.5",
     "typescript": "^3.8.3",
-    "vsce": "^1.77.0",
+    "vsce": "^1.79.3",
     "vscode-test": "^1.4.0",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11"
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
   },
   "dependencies": {
-    "vditor": "^3.3.11"
+    "vditor": "^3.4.7"
   },
   "keywords": [
     "markdown",

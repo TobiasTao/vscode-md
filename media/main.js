@@ -15,6 +15,7 @@
   let editorTheme = {};
   let imgConfig = {};
   let imgPathPrefix = '';
+  let filenameList = [];
 
   let vditor;
   let options = {
@@ -75,6 +76,9 @@
       accept: 'image/*',
       handler(files) {
         handleImg(files);
+      },
+      linkToImgCallback(responseText) {
+        console.log('link to img: ' + responseText);
       }
     },
     input(md) {
@@ -143,11 +147,25 @@
     console.log('update: ' + message.type);
     switch (message.type) {
       case 'all':
-        console.log('message.options: ');
-        console.log(message.options);
+        console.log(message.filenameList);
+        // console.log('message.options: ');
+        // console.log(message.options);
 
         Object.assign(options, message.options);
+
+        options.hint = {
+          extend: [
+            {
+              key: '/',
+              hint: (key) => {
+                return convertFileList(key);
+              }
+            }
+          ]
+        };
+
         console.log(options);
+        // console.log(convertFileList(message.filenameList, key));
 
         imgConfig = message.imgConfig;
         imgPathPrefix = message.imgPathPrefix;
@@ -163,8 +181,24 @@
         vditor.insertValue(message.urlText);
         clearLoading();
         return;
+      case 'updateFilenameList':
+        this.filenameList = message.filenameList;
     }
   });
+
+  function convertFileList(pattern) {
+    const res = this.filenameList
+      .filter((filePath) => {
+        return filePath.indexOf(pattern) > -1;
+      })
+      .map((filePath) => {
+        return {
+          value: filePath,
+          html: filePath
+        };
+      });
+    return res;
+  }
 
   function genImgName() {
     var date = new Date(Date.now());

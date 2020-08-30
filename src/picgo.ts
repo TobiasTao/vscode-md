@@ -3,7 +3,7 @@ import * as fs from 'fs';
 import * as vscode from 'vscode';
 
 import PicGo from 'picgo/dist/src/core/PicGo';
-import { ImgInfo } from 'picgo/dist/src/utils/interfaces';
+import { IImgInfo } from 'picgo/dist/src/utils/interfaces';
 
 import { formatString, showError, getUploadedName } from './utils';
 
@@ -57,7 +57,7 @@ export default class VSPicgo extends EventEmitter {
     VSPicgo.picgo.on('finished', async (ctx: PicGo) => {
       let urlText = '';
       const outputFormatTemplate = '![${uploadedName}](${url})';
-      urlText = ctx.output.reduce((acc: string, imgInfo: ImgInfo): string => {
+      urlText = ctx.output.reduce((acc: string, imgInfo: IImgInfo): string => {
         return `${acc}${formatString(outputFormatTemplate, {
           uploadedName: getUploadedName(imgInfo),
           url: imgInfo.imgUrl

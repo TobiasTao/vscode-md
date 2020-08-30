@@ -38,6 +38,8 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
 
     let picgo: VSPicgo;
 
+    const mdFilepath = document.uri.fsPath;
+
     const linkBase = webviewPanel.webview
       .asWebviewUri(document.uri)
       .toString(true)
@@ -82,13 +84,14 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
       console.log("extConfig.get('options')");
       console.log(extConfig.get('options'));
 
-      const vditorOptions = Object.assign({}, extConfig.get('options'), {
+      const vditorOptions = Object.assign({}, extConfig.options, {
         value: document.getText(),
         cdn: cdn,
         theme: extConfig.theme.global,
         preview: {
           markdown: {
-            linkBase: linkBase
+            linkBase: linkBase,
+            mark: extConfig.options.preview.markdown.mark
           },
           theme: {
             current: extConfig.theme.content
@@ -133,12 +136,29 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
       console.log('onDidCloseTextDocument');
     });
 
+    const renameFilesSubscription = vscode.workspace.onDidRenameFiles(() => {
+      console.log('renameFilesSubscription');
+
+      this.getFilenameList(docDir, webviewPanel);
+    });
+
+    const createFilesSubscription = vscode.workspace.onDidCreateFiles(() => {
+      this.getFilenameList(docDir, webviewPanel);
+    });
+
+    const deleteFilesSubscription = vscode.workspace.onDidDeleteFiles(() => {
+      this.getFilenameList(docDir, webviewPanel);
+    });
+
     // Make sure we get rid of the listener when our editor is closed.
     webviewPanel.onDidDispose(() => {
       changeDocumentSubscription.dispose();
       changeExtConfigSubscription.dispose();
       willSaveSubscription.dispose();
       closeDocumentSubscription.dispose();
+      renameFilesSubscription.dispose();
+      createFilesSubscription.dispose();
+      deleteFilesSubscription.dispose();
     });
 
     //Receive message from the webview.
@@ -174,6 +194,7 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
     });
 
     updateWebview();
+    this.getFilenameList(docDir, webviewPanel);
   }
 
   /**
@@ -224,5 +245,18 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
   private updateTextDocument(document: vscode.TextDocument, text: string) {
     const writeData = Buffer.from(text, 'utf8');
     return vscode.workspace.fs.writeFile(document.uri, writeData);
+  }
+
+  private getFilenameList(docDir: string, webviewPanel: vscode.WebviewPanel): void {
+      vscode.workspace.findFiles('**/**').then((res) => {
+      const filenameList = res.map((uri) => {
+        const rel = path.relative(docDir, uri.fsPath);
+        return rel.split(path.sep).join('/');
+            
+      });
+        webviewPanel.webview.postMessage({
+                type: 'updateFilenameList',
+                filenameList
+    });
   }
 }
