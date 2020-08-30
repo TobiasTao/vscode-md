@@ -3,9 +3,9 @@
   "displayName": "%ext.displayName%",
   "description": "%ext.description%",
   "publisher": "TobiasTao",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "engines": {
-    "vscode": "^1.47.0"
+    "vscode": "^1.48.0"
   },
   "categories": [
     "Other"
