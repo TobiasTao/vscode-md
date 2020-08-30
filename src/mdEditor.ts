@@ -248,15 +248,14 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
   }
 
   private getFilenameList(docDir: string, webviewPanel: vscode.WebviewPanel): void {
-      vscode.workspace.findFiles('**/**').then((res) => {
-      const filenameList = res.map((uri) => {
-        const rel = path.relative(docDir, uri.fsPath);
-        return rel.split(path.sep).join('/');
-            
+    vscode.workspace.findFiles('**/**').then((res) => {
+      let filenameList: string[] = res.map((uri) => {
+        return path.relative(docDir, uri.fsPath).split(path.sep).join('/');
       });
-        webviewPanel.webview.postMessage({
-                type: 'updateFilenameList',
-                filenameList
+      webviewPanel.webview.postMessage({
+        type: 'updateFilenameList',
+        filenameList
+      });
     });
   }
 }

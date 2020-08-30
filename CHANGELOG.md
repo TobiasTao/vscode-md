@@ -1,20 +1,28 @@
-## v0.2.2
+# v0.4.0
 
-### ✨New Features
+### ✨ New Features
 
-- Support mindmap:
+#### 1. Path autocomplete
 
-![](docs/images/mindmap.gif)
+![](docs\images\suport-autocomplete.gif)
 
+#### 2. Support YAML Front Matter syntax
 
+![](docs/images/support-yaml-front-matter.gif)
 
-- Add row and column buttons to the table in 'wysiwyg' mode:
+#### 3. Support mark  syntax
 
-![](docs/images/table-add-delete-tooltip.gif)
+![](docs/images/support-mark.gif)
 
-### 🐛 Bug Fixes
+set `options.preview.markdown.mark=true`, to enable it.
 
-- Outline navigation failure #4
+#### 4. Localization: Japanese
+
+![](docs/images/suport-japanese.gif)
+
+#### 5. New theme: Ant Design
+
+![](docs/images/support-ant-theme.png)
 
 # v0.3.0
 
@@ -34,6 +42,22 @@ after:
 
 ![](docs/images/zhihu-support.png)
 
-#### Custom preview toolbar acitons
+#### Custom preview toolbar actions
 
 ![](docs/images/custom-preview-actions.gif)
+
+## v0.2.2
+
+### ✨New Features
+
+- Support mindmap:
+
+![](docs/images/mindmap.gif)
+
+- Add row and column buttons to the table in 'wysiwyg' mode:
+
+![](docs/images/table-add-delete-tooltip.gif)
+
+### 🐛 Bug Fixes
+
+- Outline navigation failure #4
