@@ -3,6 +3,7 @@ import * as path from 'path';
 import { getNonce, showError } from './utils';
 import * as fs from 'fs';
 import VSPicgo from './picgo';
+import { start } from 'repl';
 export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
   private static readonly viewType: string = 'myEdit.markdown';
 
@@ -40,7 +41,7 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
 
     const mdFilepath = document.uri.fsPath;
 
-    const linkBase = webviewPanel.webview
+    let linkBase = webviewPanel.webview
       .asWebviewUri(document.uri)
       .toString(true)
       .replace(/\/[^\/]+?\.\w+$/, '/');
@@ -66,6 +67,7 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
         }
       }
     } else if (extConfig.image.pathType === 'absolute') {
+      linkBase = linkBase.split('///')[0] + '///';
       if (path.isAbsolute(extConfig.image.dirPath)) {
         imgPathPrefix = extConfig.image.dirPath;
         imgStoreDir = imgPathPrefix;
