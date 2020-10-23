@@ -1,5 +1,5 @@
 {
-  "ext.displayName": "vscode-md",
-  "ext.description": "Meet all needs of writing markdown on vscode",
+  "ext.displayName": "vscode all markdown",
+  "ext.description": "A full-featured markdown extension",
   "config.configPath.description": "The path to your PicGo configuration."
 }
