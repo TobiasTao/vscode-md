@@ -1,3 +1,23 @@
+# v0.5.0
+
+## :sparkles: New Features
+
+### 1. Support flowchart
+
+![](docs/images/support-flowchart.png)
+
+### 2. New math formula rendering engine: MathJax
+
+- config settings：
+
+![](docs/images/mathjax2.png)
+
+- write math formula:
+
+![](docs/images/mathjax1.png)
+
+
+
 # v0.4.0
 
 ### ✨ New Features

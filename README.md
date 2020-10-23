@@ -8,14 +8,12 @@
 
 ![](./docs/images/1.gif)
 
-
-
 - Support outline, mathematical formulas, mind maps, charts, flowcharts, Gantt charts, timing charts, staffs, multimedia, voice reading, heading anchors, code highlighting and copying, graphviz rendering
 - Multi-language support, built-in Chinese, English, Korean text localization
 - Built-in security filtering, export, image lazy loading, task list, at, multi-platform preview, multi-theme switching, copy to WeChat function
 - The toolbar contains 30+ items of operations.
 - Emoji auto-complete.
-- You can use drag and drop, clipboard and paste to store your images, and then store them locally or [upload to the server](./docs/Upload-Image.md).
+- You can use drag and drop to store your images, and then store them locally or [upload to the server](./docs/Upload-Image.md).
 - The markup HTML is automatically converted to Markdown.
 - Support character counting.
 - Multi-theme support.
