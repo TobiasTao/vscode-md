@@ -77,7 +77,10 @@
           "type": "string",
           "default": "KaTeX",
           "description": "Mathematical formula rendering engine",
-          "enum": ["KaTeX", "MathJax"]
+          "enum": [
+            "KaTeX",
+            "MathJax"
+          ]
         },
         "vscode-md.options.preview.math.macros": {
           "type": "object",
@@ -229,7 +232,7 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
-    "vditor": "^3.5.5"
+    "vditor": "^3.6.0"
   },
   "keywords": [
     "markdown",

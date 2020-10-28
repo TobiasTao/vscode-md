@@ -46,6 +46,8 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
             .toString(true)
             .replace(/\/[^\/]+?\.\w+$/, '/');
 
+        let linkPrefix = '';
+
         const extConfig = vscode.workspace.getConfiguration('vscode-md');
 
         // image dir(fsPath)
@@ -67,7 +69,7 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
                 }
             }
         } else if (extConfig.image.pathType === 'absolute') {
-            linkBase = linkBase.split('///')[0] + '///';
+            linkPrefix = linkBase.split('///')[0] + '///';
             if (path.isAbsolute(extConfig.image.dirPath)) {
                 imgPathPrefix = extConfig.image.dirPath;
                 imgStoreDir = imgPathPrefix;
@@ -93,6 +95,7 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
                 preview: {
                     markdown: {
                         linkBase: linkBase,
+                        linkPrefix,
                         mark: extConfig.options.preview.markdown.mark
                     },
                     math: extConfig.options.preview.math,
