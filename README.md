@@ -1,6 +1,6 @@
 ## 💡 Introduction
 
-**Meet all needs of writing markdown on vscode**
+**A full-featured markdown extension**
 
 ## ✨ Features
 
