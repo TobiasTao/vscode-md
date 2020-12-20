@@ -39,10 +39,11 @@
 - `vscode-md.theme.code`: Code theme, see [Chroma](https://xyproto.github.io/splash/docs/all.html) for more information
 - `vscode-md.picgo.configPath`: The path to your PicGo configuration.
 
-## 📚 Wiki
+## 📚 Documentation
 
 - [Image Upload](./docs/Upload-Image.md)
 - [Shortcut key](https://hacpai.com/article/1582778815353#English)
+
 
 ## 📄 License
 
