@@ -222,17 +222,17 @@
     "eslint": "^6.8.0",
     "glob": "^7.1.6",
     "mocha": "^7.2.0",
-    "picgo": "^1.4.11",
+    "picgo": "^1.4.14",
     "prettier": "^2.0.5",
     "ts-loader": "^7.0.5",
     "typescript": "^3.8.3",
     "vsce": "^1.81.1",
-    "vscode-test": "^1.4.0",
+    "vscode-test": "^1.4.1",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
-    "vditor": "^3.6.0"
+    "vditor": "^3.7.3"
   },
   "keywords": [
     "markdown",
