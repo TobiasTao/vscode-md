@@ -61,7 +61,7 @@
         "vscode-md.options.tab": {
           "type": "string",
           "default": "    ",
-          "description": "Tabsize"
+          "description": "tab key operation string, default value \"    \"  equals tabsize = 4"
         },
         "vscode-md.options.toolbarConfig.hide": {
           "type": "boolean",
