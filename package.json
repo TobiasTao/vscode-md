@@ -58,6 +58,11 @@
           "default": false,
           "description": "Show outline of markdown"
         },
+        "vscode-md.options.tab": {
+          "type": "string",
+          "default": "    ",
+          "description": "Tabsize"
+        },
         "vscode-md.options.toolbarConfig.hide": {
           "type": "boolean",
           "default": false,

@@ -184,9 +184,9 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
                             throw err;
                         } else {
                             if (extConfig.image.pathType === 'picgo') {
-                                picgo.upload([imgStorePath]).then(() => {
-                                    fs.unlinkSync(imgStorePath);
-                                });
+                                // picgo.upload([imgStorePath]).then(() => {
+                                //     fs.unlinkSync(imgStorePath);
+                                // });
                             } else {
                                 webviewPanel.webview.postMessage({
                                     type: 'imgSaved'
