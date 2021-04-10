@@ -53,10 +53,19 @@
             "ant"
           ]
         },
-        "vscode-md.options.outline": {
+        "vscode-md.options.outline.enable": {
           "type": "boolean",
           "default": false,
           "description": "Show outline of markdown"
+        },
+        "vscode-md.options.outline.position": {
+          "type": "string",
+          "default": "left",
+          "description": "Config postion of outline",
+          "enum": [
+            "left",
+            "right"
+          ]
         },
         "vscode-md.options.tab": {
           "type": "string",
@@ -237,7 +246,7 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
-    "vditor": "^3.7.3"
+    "vditor": "^3.8.4"
   },
   "keywords": [
     "markdown",

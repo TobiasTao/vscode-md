@@ -21,7 +21,10 @@
     let options = {
         height: window.innerHeight - 20,
         mode: 'ir',
-        outline: true,
+        outline: {
+            enable: true,
+            postition: 'left'
+        },
         cache: { enable: false },
         toolbar: [
             'emoji',
@@ -53,17 +56,17 @@
             'edit-mode',
             {
                 name: 'save',
-                tipPosition: 'ne',
+                tipPosition: 'n',
                 tip: 'save',
-                className: '',
                 icon: saveIcon,
+                className: 'right',
                 click: () => {
                     saveDoc();
                 }
             },
             {
                 name: 'more',
-                toolbar: ['both', 'export', 'preview', 'devtools']
+                toolbar: ['both', 'preview', 'devtools']
             }
         ],
         toolbarConfig: {
@@ -94,6 +97,8 @@
         }
     };
     function initVditor() {
+        console.info('init vditor options:' + options);
+        console.log(JSON.stringify(options));
         vditor = new Vditor('vditor', options);
     }
 

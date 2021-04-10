@@ -172,7 +172,6 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
                 case 'save':
                     this.updateTextDocument(document, e.text);
                     return;
-
                 case 'img':
                     let imgName = e.imgName;
                     const imgData = Buffer.from(e.file, 'binary');
