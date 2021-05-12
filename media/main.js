@@ -76,12 +76,11 @@
             enable: true
         },
         upload: {
+            url: '/hhh',
             accept: 'image/*',
-            handler(files) {
+            async handler(files) {
+                console.info('handleImg');
                 handleImg(files);
-            },
-            linkToImgCallback(responseText) {
-                console.log('link to img: ' + responseText);
             }
         },
         input(md) {
@@ -97,8 +96,8 @@
         }
     };
     function initVditor() {
-        console.info('init vditor options:' + options);
-        console.log(JSON.stringify(options));
+        console.info('init vditor with options:');
+        console.info(options);
         vditor = new Vditor('vditor', options);
     }
 
@@ -113,9 +112,8 @@
     let imgPath = '';
     function handleImg(files) {
         createLoading();
-        console.log('handleImg');
 
-        // create a new img file form files
+        // create a new img file from files
         let img = files[0];
 
         // img file suffix
