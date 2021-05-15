@@ -116,56 +116,6 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
             });
         }
 
-        const changeExtConfigSubscription = vscode.workspace.onDidChangeConfiguration((e) => {
-            if (
-                e.affectsConfiguration('vscode-md.image.pathType') ||
-                e.affectsConfiguration('vscode-md.image.dirPath')
-            ) {
-            }
-            if (e.affectsConfiguration('vscode-md.options') || e.affectsConfiguration('vscode-md.theme')) {
-            }
-            console.log('onDidChangeConfiguration');
-        });
-
-        const changeDocumentSubscription = vscode.workspace.onDidChangeTextDocument((e) => {
-            if (e.document.uri.toString() === document.uri.toString()) {
-            }
-            console.log('onDidChangeTextDocument');
-        });
-
-        const willSaveSubscription = vscode.workspace.onWillSaveTextDocument((e) => {
-            console.log('willSaveSubscription');
-        });
-
-        const closeDocumentSubscription = vscode.workspace.onDidCloseTextDocument((e) => {
-            console.log('onDidCloseTextDocument');
-        });
-
-        const renameFilesSubscription = vscode.workspace.onDidRenameFiles(() => {
-            console.log('renameFilesSubscription');
-
-            this.getFilenameList(docDir, webviewPanel);
-        });
-
-        const createFilesSubscription = vscode.workspace.onDidCreateFiles(() => {
-            this.getFilenameList(docDir, webviewPanel);
-        });
-
-        const deleteFilesSubscription = vscode.workspace.onDidDeleteFiles(() => {
-            this.getFilenameList(docDir, webviewPanel);
-        });
-
-        // Make sure we get rid of the listener when our editor is closed.
-        webviewPanel.onDidDispose(() => {
-            changeDocumentSubscription.dispose();
-            changeExtConfigSubscription.dispose();
-            willSaveSubscription.dispose();
-            closeDocumentSubscription.dispose();
-            renameFilesSubscription.dispose();
-            createFilesSubscription.dispose();
-            deleteFilesSubscription.dispose();
-        });
-
         //Receive message from the webview.
         webviewPanel.webview.onDidReceiveMessage((e) => {
             switch (e.type) {
@@ -215,6 +165,20 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
             vscode.Uri.file(path.join(this.context.extensionPath, 'media', 'main.js'))
         );
 
+        const scriptUri3 = webview.asWebviewUri(
+            vscode.Uri.file(
+                path.join(
+                    this.context.extensionPath,
+                    'node_modules',
+                    'vditor',
+                    'dist',
+                    'js',
+                    'icons',
+                    `${vscode.workspace.getConfiguration('vscode-md').options.icon}.js`
+                )
+            )
+        );
+
         const styleUri1 = webview.asWebviewUri(
             vscode.Uri.file(path.join(this.context.extensionPath, 'node_modules', 'vditor', 'dist', 'index.css'))
         );
@@ -233,12 +197,13 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
 				<meta charset="UTF-8">
 				<link href="${styleUri1}" rel="stylesheet"/>
 				<link href="${styleUri2}" rel="stylesheet"/>
-			</head>
-      <body>
-        <div id="loading"></div>
-        <div id="vditor"></div>
+                </head>
+                <body>
+                <div id="loading"></div>
+                <div id="vditor"></div>
+				<script src="${scriptUri3}"></script>
 				<script src="${scriptUri1}"></script>
-        <script src="${scriptUri2}"></script>
+                <script src="${scriptUri2}"></script>
 			</body>
 			</html>`;
     }
