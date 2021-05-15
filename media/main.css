@@ -1,24 +1,23 @@
 #vditor {
-  border: none;
-  padding-top: 30px;
-  height: 100vh;
+    border: none;
+    height: 100vh;
 }
 
 .vditor-reset {
-  font-size: 20px;
-  padding: 0 10% !important;
+    font-size: 20px;
+    padding: 0 5% !important;
 }
 
 .vditor-toolbar {
-  border: none;
-  background-color: transparent;
+    border: none;
+    background-color: transparent;
 }
 
 .vditor-outline {
-  border: none;
-  background-color: transparent;
+    border: none;
+    background-color: transparent;
 }
 
 .vditor-outline__title {
-  border: none;
+    border: none;
 }
