@@ -1,3 +1,23 @@
+# v0.6.0
+
+## :sparkles: New Features
+
+### 1. Outline collapse and position
+
+The outline support collapse and setting position with the "vscode-md.options.outline.position"
+
+![](./docs/images/outline-collapse-and-position.gif)
+
+### 2. I18n: 繁體中文 & ru_RU
+
+![](docs/images/ru&繁体.gif)
+
+### 3. Better editor layout
+
+![](docs/images/betterlayout.gif)
+
+### 4. Support PlantUml
+
 # v0.5.0
 
 ## :sparkles: New Features
@@ -16,8 +36,6 @@
 
 ![](docs/images/mathjax1.png)
 
-
-
 # v0.4.0
 
 ### ✨ New Features
@@ -30,7 +48,7 @@
 
 ![](docs/images/support-yaml-front-matter.gif)
 
-#### 3. Support mark  syntax
+#### 3. Support mark syntax
 
 ![](docs/images/support-mark.gif)
 

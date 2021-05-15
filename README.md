@@ -1,12 +1,13 @@
 ## 💡 Introduction
 
-**A full-featured markdown extension**
+**A full-featured markdown extension for vscode, powered by [vditor](https://vditor.b3log.org/) and [picgo](https://picgo.github.io/PicGo-Doc/en/guide/#instruction).**
 
 ## ✨ Features
 
 - Support three editing modes: WYSIWYG, Instant Rendering and Split View
 
-![](./docs/images/1.gif)
+![](docs/images/new1.gif)
+
 
 - Support outline, mathematical formulas, mind maps, charts, flowcharts, Gantt charts, timing charts, staffs, multimedia, voice reading, heading anchors, code highlighting and copying, graphviz rendering
 - Multi-language support, built-in Chinese, English, Korean text localization
@@ -43,7 +44,6 @@
 
 - [Image Upload](./docs/Upload-Image.md)
 - [Shortcut key](https://hacpai.com/article/1582778815353#English)
-
 
 ## 📄 License
 
