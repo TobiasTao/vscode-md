@@ -116,6 +116,56 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
             });
         }
 
+        const changeExtConfigSubscription = vscode.workspace.onDidChangeConfiguration((e) => {
+            if (
+                e.affectsConfiguration('vscode-md.image.pathType') ||
+                e.affectsConfiguration('vscode-md.image.dirPath')
+            ) {
+            }
+            if (e.affectsConfiguration('vscode-md.options') || e.affectsConfiguration('vscode-md.theme')) {
+            }
+            console.log('onDidChangeConfiguration');
+        });
+
+        const changeDocumentSubscription = vscode.workspace.onDidChangeTextDocument((e) => {
+            if (e.document.uri.toString() === document.uri.toString()) {
+            }
+            console.log('onDidChangeTextDocument');
+        });
+
+        const willSaveSubscription = vscode.workspace.onWillSaveTextDocument((e) => {
+            console.log('willSaveSubscription');
+        });
+
+        const closeDocumentSubscription = vscode.workspace.onDidCloseTextDocument((e) => {
+            console.log('onDidCloseTextDocument');
+        });
+
+        const renameFilesSubscription = vscode.workspace.onDidRenameFiles(() => {
+            console.log('renameFilesSubscription');
+
+            this.getFilenameList(docDir, webviewPanel);
+        });
+
+        const createFilesSubscription = vscode.workspace.onDidCreateFiles(() => {
+            this.getFilenameList(docDir, webviewPanel);
+        });
+
+        const deleteFilesSubscription = vscode.workspace.onDidDeleteFiles(() => {
+            this.getFilenameList(docDir, webviewPanel);
+        });
+
+        // Make sure we get rid of the listener when our editor is closed.
+        webviewPanel.onDidDispose(() => {
+            changeDocumentSubscription.dispose();
+            changeExtConfigSubscription.dispose();
+            willSaveSubscription.dispose();
+            closeDocumentSubscription.dispose();
+            renameFilesSubscription.dispose();
+            createFilesSubscription.dispose();
+            deleteFilesSubscription.dispose();
+        });
+
         //Receive message from the webview.
         webviewPanel.webview.onDidReceiveMessage((e) => {
             switch (e.type) {
