@@ -41,7 +41,9 @@
             "zh_CN",
             "en_US",
             "ko_KR",
-            "ja_JP"
+            "ja_JP",
+            "zh_TW",
+            "ru_RU"
           ]
         },
         "vscode-md.options.icon": {
@@ -246,7 +248,7 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
-    "vditor": "^3.8.4"
+    "vditor": "^3.8.5"
   },
   "keywords": [
     "markdown",
