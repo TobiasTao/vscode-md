@@ -35,8 +35,6 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
 
         let picgo: VSPicgo;
 
-        const mdFilepath = document.uri.fsPath;
-
         let linkBase = webviewPanel.webview
             .asWebviewUri(document.uri)
             .toString(true)
@@ -175,6 +173,9 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
                 case 'img':
                     let imgName = e.imgName;
                     const imgData = Buffer.from(e.file, 'binary');
+                    if (!fs.existsSync(imgStoreDir)) {
+                        fs.mkdirSync(imgStoreDir, { recursive: true });
+                    }
                     let imgStorePath = path.join(imgStoreDir, imgName);
                     console.log('imgStorePath: ' + imgStorePath);
                     fs.writeFile(imgStorePath, imgData, (err) => {
