@@ -23,12 +23,13 @@ export interface IOutputUrl {
 }
 
 export default class VSPicgo extends EventEmitter {
-    private static picgo: PicGo = new PicGo();
+    private picgo: PicGo;
 
     private webviewPanel: vscode.WebviewPanel;
 
     constructor(webviewPanel: vscode.WebviewPanel) {
         super();
+        this.picgo = new PicGo();
         this.webviewPanel = webviewPanel;
         this.configPicgo();
         this.addFinishListener();
@@ -38,7 +39,7 @@ export default class VSPicgo extends EventEmitter {
         const picgoConfigPath = vscode.workspace.getConfiguration('vscode-md.picgo').get<string>('configPath');
         if (picgoConfigPath) {
             try {
-                VSPicgo.picgo.setConfig(
+                this.picgo.setConfig(
                     JSON.parse(
                         fs.readFileSync(picgoConfigPath, {
                             encoding: 'utf-8'
@@ -53,8 +54,14 @@ export default class VSPicgo extends EventEmitter {
         }
     }
 
+    upload(input: string) {
+        this.picgo.upload([input]).then(() => {
+            fs.unlinkSync(input);
+        });
+    }
+
     addFinishListener() {
-        VSPicgo.picgo.on('finished', async (ctx: PicGo) => {
+        this.picgo.on('finished', async (ctx: PicGo) => {
             let urlText = '';
             const outputFormatTemplate = '![${uploadedName}](${url})';
             urlText = ctx.output.reduce((acc: string, imgInfo: IImgInfo): string => {
@@ -71,7 +78,7 @@ export default class VSPicgo extends EventEmitter {
             });
         });
 
-        VSPicgo.picgo.on('notification', (notice) => {
+        this.picgo.on('notification', (notice) => {
             showError('Upload image failed: ' + notice);
         });
     }
